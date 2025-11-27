@@ -1,0 +1,88 @@
+import 'package:calculations/pages/employees.dart';
+import 'package:calculations/pages/home.dart';
+import 'package:calculations/pages/products.dart';
+import 'package:calculations/pages/setting.dart';
+import 'package:flutter/material.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+
+class Layout extends StatefulWidget {              // NEW        // NEW
+  const Layout({
+    super.key,
+  });
+
+  @override
+  State<Layout> createState() => _LayoutState();
+}
+
+class _LayoutState extends State<Layout> {
+  int _currentIndex = 0;
+  List<Widget> pages = [
+    Home(),
+    Employees(),
+    Products(),
+    Setting(),
+  ];
+  List<String> pageTitles = [
+    "Calculations",
+    "Employees",
+    "Products",
+    "Settings",
+  ];
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      backgroundColor: const Color(0xFFF4F4F4),
+
+      appBar: AppBar(
+        backgroundColor: const Color.fromRGBO(18, 18, 18, 1),
+        title: Text(
+          pageTitles[_currentIndex].toUpperCase(),           // use the passed title
+          style: const TextStyle(
+            color: Colors.white,
+            fontWeight: FontWeight.w800,
+            letterSpacing: 2,
+          ),
+        ),
+      ),
+
+      body: Padding(
+        padding: const EdgeInsets.all(16),
+        child: pages[_currentIndex],
+      ),
+
+      // -------------------------------
+      // ADD BOTTOM NAVIGATION BAR HERE
+      // -------------------------------
+      bottomNavigationBar: BottomNavigationBar(
+        type: BottomNavigationBarType.fixed,
+        onTap: (index){
+          setState(() {
+            _currentIndex = index;
+          });
+        },
+        selectedItemColor: Color(0xFF5B58FF),
+        unselectedItemColor: Colors.grey,
+        showUnselectedLabels: true,
+        items: [
+          BottomNavigationBarItem(
+            icon: Icon(FontAwesomeIcons.solidFileLines),
+            label: "Home",
+          ),
+          BottomNavigationBarItem(
+            icon: Icon(FontAwesomeIcons.userGroup),
+            label: "Employees",
+          ),
+          BottomNavigationBarItem(
+            icon: Icon(FontAwesomeIcons.box),
+            label: "Products",
+          ),
+          BottomNavigationBarItem(
+            icon: Icon(FontAwesomeIcons.gear),
+            label: "Settings",
+          ),
+        ],
+        currentIndex: _currentIndex,
+      ),
+    );
+  }
+}
