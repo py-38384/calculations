@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 
-class EmployeeCard extends StatelessWidget {
+class Productcard extends StatelessWidget {
   final String name;
   final String phoneNumber;
-  const EmployeeCard({
+  const Productcard({
     super.key,
     required this.name,
     required this.phoneNumber
@@ -36,7 +36,7 @@ class EmployeeCard extends StatelessWidget {
                       width: 90,
                       decoration: BoxDecoration(
                         borderRadius: BorderRadius.circular(10),
-                        image: DecorationImage(image: AssetImage("assets/images/profile-picture.png"))
+                        image: DecorationImage(image: AssetImage("assets/images/products.png"))
                       ),
                     ),
                     SizedBox(width: 16),

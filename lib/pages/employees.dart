@@ -1,3 +1,4 @@
+import 'package:calculations/components/employeeCard.dart';
 import 'package:flutter/material.dart';
 
 class Employees extends StatelessWidget {
@@ -36,8 +37,35 @@ class Employees extends StatelessWidget {
               ],
             ),
           ),
+          Expanded(
+            child: ListView(
+              padding: EdgeInsets.only(top: 20, bottom: 70),
+              children: [
+                EmployeeCard(name: "Sumon", phoneNumber: "01316235467",),
+                EmployeeCard(name: "Rofik", phoneNumber: "01316235467",),
+                EmployeeCard(name: "Rofik", phoneNumber: "01316235467",),
+                EmployeeCard(name: "Rofik", phoneNumber: "01316235467",),
+                EmployeeCard(name: "Rofik", phoneNumber: "01316235467",),
+                EmployeeCard(name: "Rofik", phoneNumber: "01316235467",),
+                EmployeeCard(name: "Rofik", phoneNumber: "01316235467",),
+                EmployeeCard(name: "Alamin", phoneNumber: "01316235467",),
+                EmployeeCard(name: "Alamin", phoneNumber: "01316235467",),
+                EmployeeCard(name: "Alamin", phoneNumber: "01316235467",),
+                EmployeeCard(name: "Alamin", phoneNumber: "01316235467",),
+                EmployeeCard(name: "Alamin", phoneNumber: "01316235467",),
+              ],
+            ),
+          )
         ],
       ),
+      floatingActionButton: FloatingActionButton(
+        onPressed: () {
+          print("FAB pressed!");
+        },
+        backgroundColor: Color(0xFF5B58FF),
+        child: Icon(Icons.add, color: Colors.white),
+      ),
+      floatingActionButtonLocation: FloatingActionButtonLocation.endFloat,
     );
   }
 }
