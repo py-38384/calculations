@@ -1,4 +1,5 @@
 import 'package:calculations/components/employeeCard.dart';
+import 'package:calculations/pages/new_employees.dart';
 import 'package:flutter/material.dart';
 
 class Employees extends StatelessWidget {
@@ -60,7 +61,12 @@ class Employees extends StatelessWidget {
       ),
       floatingActionButton: FloatingActionButton(
         onPressed: () {
-          print("FAB pressed!");
+          Navigator.push(
+            context,
+            MaterialPageRoute<void>(
+              builder: (BuildContext context) => const NewEmployees(),
+            ),
+          );
         },
         backgroundColor: Color(0xFF5B58FF),
         child: Icon(Icons.add, color: Colors.white),
