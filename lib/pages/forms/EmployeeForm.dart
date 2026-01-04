@@ -1,8 +1,8 @@
 import 'package:calculations/components/input.dart';
 import 'package:flutter/material.dart';
 
-class NewEmployees extends StatelessWidget {
-  const NewEmployees({super.key});
+class EmployeesForm extends StatelessWidget {
+  const EmployeesForm({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -35,6 +35,9 @@ class NewEmployees extends StatelessWidget {
             Input(label: 'NAME', placeholder: 'Enter Employee Name'),
             SizedBox(height: 20),
             Input(label: 'PHONE NUMBER', placeholder: 'Enter Employee Phone'),
+            GestureDetector(
+              child: Text('Add'),
+            )
           ],
         ),
       ),

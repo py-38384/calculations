@@ -1,5 +1,5 @@
 import 'package:calculations/components/employeeCard.dart';
-import 'package:calculations/pages/new_employees.dart';
+import 'package:calculations/pages/forms/EmployeeForm.dart';
 import 'package:flutter/material.dart';
 
 class Employees extends StatelessWidget {
@@ -64,7 +64,7 @@ class Employees extends StatelessWidget {
           Navigator.push(
             context,
             MaterialPageRoute<void>(
-              builder: (BuildContext context) => const NewEmployees(),
+              builder: (BuildContext context) => const EmployeesForm(),
             ),
           );
         },
