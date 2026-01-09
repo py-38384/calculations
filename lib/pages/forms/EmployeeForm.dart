@@ -36,7 +36,26 @@ class EmployeesForm extends StatelessWidget {
             SizedBox(height: 20),
             Input(label: 'PHONE NUMBER', placeholder: 'Enter Employee Phone'),
             GestureDetector(
-              child: Text('Add'),
+              child: Container(
+                width: MediaQuery.of(context).size.width,
+                height: 50,
+                margin: EdgeInsets.only(top: 30),
+                alignment: Alignment.center,
+                
+                decoration: BoxDecoration(
+                  color: Colors.blue,
+                  borderRadius: BorderRadius.circular(8)
+                ),
+                child: Text(
+                  "ADD",
+                  style: TextStyle(
+                    fontWeight: FontWeight.w600,
+                    color: Colors.white,
+                    fontSize: 14
+                  ),
+                ),
+              ),
+              
             )
           ],
         ),

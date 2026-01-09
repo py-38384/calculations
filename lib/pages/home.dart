@@ -1,5 +1,6 @@
 import 'package:calculations/components/dropdown.dart';
 import 'package:calculations/components/slipCard.dart';
+import 'package:calculations/pages/forms/NewSlipForm.dart';
 import 'package:flutter/material.dart';
 
 class Home extends StatelessWidget {
@@ -66,7 +67,12 @@ class Home extends StatelessWidget {
       ),
       floatingActionButton: FloatingActionButton(
         onPressed: () {
-          print("FAB pressed!");
+          Navigator.push(
+            context,
+            MaterialPageRoute<void>(
+              builder: (BuildContext context) => const NewSlipForm(),
+            ),
+          );
         },
         backgroundColor: Color(0xFF5B58FF),
         child: Icon(Icons.add, color: Colors.white),

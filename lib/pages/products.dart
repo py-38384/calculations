@@ -1,4 +1,5 @@
 import 'package:calculations/components/productCard.dart';
+import 'package:calculations/pages/forms/ProductForm.dart';
 import 'package:flutter/material.dart';
 
 class Products extends StatelessWidget {
@@ -51,7 +52,12 @@ class Products extends StatelessWidget {
       ),
       floatingActionButton: FloatingActionButton(
         onPressed: () {
-          print("FAB pressed!");
+          Navigator.push(
+            context,
+            MaterialPageRoute(
+              builder: (BuildContext context) => const ProductForm(),
+            )
+          );
         },
         backgroundColor: Color(0xFF5B58FF),
         child: Icon(Icons.add, color: Colors.white),

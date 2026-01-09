@@ -19,7 +19,7 @@ class ProductForm extends StatelessWidget {
         title: Transform.translate(
           offset: Offset(-10, 0),
           child: Text(
-            "Add New Employee",           // use the passed title
+            "Add New Product", // use the passed title
             style: const TextStyle(
               color: Colors.white,
               fontWeight: FontWeight.w800,
@@ -32,9 +32,30 @@ class ProductForm extends StatelessWidget {
         padding: EdgeInsets.all(15),
         child: Column(
           children: [
-            Input(label: 'NAME', placeholder: 'Enter Employee Name'),
+            Input(label: 'NAME', placeholder: 'Enter Product Name'),
             SizedBox(height: 20),
-            Input(label: 'PHONE NUMBER', placeholder: 'Enter Employee Phone'),
+            Input(label: 'PER KG', placeholder: 'Enter Per KG Value'),
+            GestureDetector(
+              child: Container(
+                width: MediaQuery.of(context).size.width,
+                height: 50,
+                margin: EdgeInsets.only(top: 30),
+                alignment: Alignment.center,
+
+                decoration: BoxDecoration(
+                  color: Colors.blue,
+                  borderRadius: BorderRadius.circular(8),
+                ),
+                child: Text(
+                  "ADD",
+                  style: TextStyle(
+                    fontWeight: FontWeight.w600,
+                    color: Colors.white,
+                    fontSize: 14,
+                  ),
+                ),
+              ),
+            ),
           ],
         ),
       ),
