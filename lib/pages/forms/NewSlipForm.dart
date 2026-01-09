@@ -1,3 +1,4 @@
+import 'package:calculations/pages/print/Slip.dart';
 import "package:flutter/material.dart";
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
@@ -270,7 +271,10 @@ class NewSlipForm extends StatelessWidget {
                   child: GestureDetector(
                     child: Container(
                       height: 40,
-                      color: Colors.blue,
+                      decoration: BoxDecoration(
+                        color: Colors.blue,
+                        borderRadius: BorderRadius.circular(5)
+                      ),
                       alignment: Alignment.center,
                       child: Text("Save", style: TextStyle(color: Colors.white),),
                     ),
@@ -281,9 +285,20 @@ class NewSlipForm extends StatelessWidget {
                 ),
                 Expanded(
                   child: GestureDetector(
+                    onTap: () {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute<void>(
+                          builder: (BuildContext context) => const Slip(),
+                        ),
+                      );
+                    },
                     child: Container(
                       height: 40,
-                      color: Colors.grey[200],
+                      decoration: BoxDecoration(
+                        color: Colors.grey[200],
+                        borderRadius: BorderRadius.circular(5)
+                      ),
                       alignment: Alignment.center,
                       child: Text("View"),
                     ),
